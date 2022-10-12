@@ -7,6 +7,13 @@ import { BannerComponent } from './banner/banner.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {path: '', component: LoginComponent },
+  {path: 'register', component: CadastroComponent},
+]
+
 @NgModule({
   declarations: [
     AcessComponent,
@@ -16,14 +23,16 @@ import { CadastroComponent } from './cadastro/cadastro.component';
   ],
 
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forRoot(routes)
   ],
 
   exports: [
     AcessComponent,
     BannerComponent,
     LoginComponent,
-    CadastroComponent
+    CadastroComponent,
+    RouterModule
   ]
 })
 export class AcessModule {}
