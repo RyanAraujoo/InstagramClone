@@ -1,7 +1,7 @@
 <div class="container text-center">
   <h1 class="container_titulo">Instagram</h1>
   <div>
-    <form [formGroup]="_FormLogin">
+    <form [formGroup]="_FormLogin" (ngSubmit)="getUserConsult()">
     <div class="row">
       <input
         type="text"
