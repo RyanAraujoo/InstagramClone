@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 
 import { RouterModule, Routes } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {path: '', component: LoginComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   ],
 
   imports: [
+    ReactiveFormsModule,
     CommonModule,
     RouterModule.forRoot(routes)
   ],
@@ -32,7 +34,8 @@ const routes: Routes = [
     BannerComponent,
     LoginComponent,
     CadastroComponent,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ]
 })
 export class AcessModule {}

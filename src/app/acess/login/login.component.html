@@ -1,6 +1,7 @@
 <div class="container text-center">
   <h1 class="container_titulo">Instagram</h1>
   <div>
+    <form [formGroup]="_FormLogin">
     <div class="row">
       <input
         type="text"
@@ -8,20 +9,23 @@
         aria-label="Sizing example input"
         aria-describedby="inputGroup-sizing-sm"
         placeholder="Telefone, nome do usuário ou email"
+        formControlName="user"
       />
     </div>
     <div class="row">
       <input
-        type="text"
+        type="password"
         class="form-control"
         aria-label="Sizing example input"
         aria-describedby="inputGroup-sizing-sm"
         placeholder="Senha"
+        formControlName="password"
       />
     </div>
     <div class="row">
-      <button type="button" class="btn btn-primary" disabled>Entrar</button>
+      <button type="submit" class="btn btn-primary" [disabled]="ValidatorFormOnButton()">Entrar</button>
     </div>
+    </form>
     <div class="row">
       <p>OU</p>
     </div>
@@ -34,6 +38,12 @@
         />
         Entrar com o Facebook
       </button>
+      <small
+      *ngIf="!_FormLogin.get('user')?.valid && _FormLogin.get('user')?.pristine == false"
+      class="form-text text-danger">O nome de usuário inserido não pertence a uma conta. Verifique seu nome de usuário e tente novamente.</small>
+      <small
+      *ngIf="!_FormLogin.get('password')?.valid && _FormLogin.get('password')?.pristine == false"
+      class="form-text text-danger">Sua senha está incorreta. Confira-a.</small>
     </div>
     <div class="row">
       <a href="">Esqueceu a senha?</a>

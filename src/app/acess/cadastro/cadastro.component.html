@@ -16,62 +16,68 @@
   <div class="row">
     <p>OU</p>
   </div>
-  <div class="row">
-    <input
-      type="text"
-      class="form-control"
-      aria-label="Sizing example input"
-      aria-describedby="inputGroup-sizing-sm"
-      placeholder="Número do Celular ou email"
-    />
-  </div>
-  <div class="row">
-    <input
-      type="text"
-      class="form-control"
-      aria-label="Sizing example input"
-      aria-describedby="inputGroup-sizing-sm"
-      placeholder="Nome completo"
-    />
-  </div>
-  <div class="row">
-    <input
-      type="text"
-      class="form-control"
-      aria-label="Sizing example input"
-      aria-describedby="inputGroup-sizing-sm"
-      placeholder="Nome do Usuário"
-    />
-  </div>
-  <div class="row">
-    <input
-      type="text"
-      class="form-control"
-      aria-label="Sizing example input"
-      aria-describedby="inputGroup-sizing-sm"
-      placeholder="Senha"
-    />
-  </div>
-  <div class="row">
-    <p>
-      As pessoas que usam nosso serviço podem ter carregado suas informações de
-      contato no Instagram.
-      <a href="">Saiba mais</a>
-    </p>
-  </div>
-  <div class="row">
-    <p>
-      Ao se cadastrar, você concorda com nossos <a href="">Termos</a>,<a
-        href=""
-      >
-        Política de Privacidade</a
-      >
-      e <a href="">Política de Cookies.</a>
-    </p>
-  </div>
-  <div class="row">
-    <button type="button" class="btn btn-primary" disabled>Cadastrar-se</button>
-  </div>
+  <form [formGroup]="_FormRegister" (ngSubmit)="setDataForm()">
+    <div class="row">
+      <input
+        type="text"
+        class="form-control"
+        aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-sm"
+        placeholder="Número do Celular ou email"
+        formControlName="numberPhoneMail"
+      />
+    </div>
+    <div class="row">
+      <input
+        type="text"
+        class="form-control"
+        aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-sm"
+        placeholder="Nome completo"
+        formControlName="completedName"
+      />
+    </div>
+    <div class="row">
+      <input
+        type="text"
+        class="form-control"
+        aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-sm"
+        placeholder="Nome do Usuário"
+        formControlName="user"
+      />
+    </div>
+    <div class="row">
+      <input
+        type="password"
+        class="form-control"
+        aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-sm"
+        placeholder="Senha"
+        formControlName="password"
+      />
+    </div>
+    <div class="row">
+      <p>
+        As pessoas que usam nosso serviço podem ter carregado suas informações de
+        contato no Instagram.
+        <a href="">Saiba mais</a>
+      </p>
+    </div>
+    <div class="row">
+      <p>
+        Ao se cadastrar, você concorda com nossos <a href="">Termos</a>,<a
+          href=""
+        >
+          Política de Privacidade</a
+        >
+        e <a href="">Política de Cookies.</a>
+      </p>
+    </div>
+    <div class="row">
+      <button type="submit" class="btn btn-primary" [disabled]="ValidatorFormOnButton()">Cadastrar-se</button>
+    </div>
+  </form>
 </div>
 
 <div class="container text-center">
