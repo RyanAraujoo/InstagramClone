@@ -5,7 +5,8 @@
 /tmp
 /out-tsc
 /bazel-out
-/src/app/shared/services/firebase
+/src/app/shared/services/firebase/sdk.service.ts
+/src/app/shared/services/firebase/sdk.service.spec.ts
 
 # Node
 /node_modules

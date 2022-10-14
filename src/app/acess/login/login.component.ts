@@ -23,6 +23,6 @@ export class LoginComponent {
         ValidatorFormOnButton(): string { return this._FormLogin.valid ? '' : 'disabled' }
 
         getUserConsult() {
-          console.log(this.userData.getUser(this._FormLogin.value.user,this._FormLogin.value.password))
+          this.userData.getUser(this._FormLogin.value.user,this._FormLogin.value.password)
         }
 }

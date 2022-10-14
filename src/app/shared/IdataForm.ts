@@ -1,4 +1,4 @@
 export interface IdataForm {
-  setUser(data: string, name: string, user: string, password: string): boolean;
-  getUser(user: string, pass: string): boolean;
+  setUser(data: string, name: string, user: string, password: string): void,
+  getUser(user: string, pass: string): void
 }

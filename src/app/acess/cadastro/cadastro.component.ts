@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UserDataService } from 'src/app/shared/services/userData.service';
 
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.scss']
+  styleUrls: ['./cadastro.component.scss'],
+  providers: [UserDataService]
 })
 
 export class CadastroComponent {
-
+  constructor(private userData: UserDataService) {}
 
     private formRegister =  new FormGroup({
       numberPhoneMail : new FormControl('',[Validators.required]),
@@ -22,7 +24,7 @@ export class CadastroComponent {
     }
 
     setDataForm() {
-
+      this.userData.setUser(this._FormRegister.value.numberPhoneMail,this._FormRegister.value.completedName,this._FormRegister.value.user,this._FormRegister.value.password);
     }
 
     ValidatorFormOnButton(): string { return this._FormRegister.valid ? '' : 'disabled' }
