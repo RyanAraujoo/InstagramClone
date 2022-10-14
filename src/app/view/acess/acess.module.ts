@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
 import { AcessComponent } from './acess.component';
 import { BannerComponent } from './banner/banner.component';
 import { LoginComponent } from './login/login.component';

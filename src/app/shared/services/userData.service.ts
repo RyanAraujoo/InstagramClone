@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { environment } from './../../../environments/environment';
 import { DatabaseMockadoService } from './../mocks/database-mockado.service';
 import { DatabaseFirebaseService } from './firebase/database-firebase.service';
-import { IdataForm } from './../IdataForm';
+import { Methods } from '../models/methodsService.model';
 @Injectable({
   providedIn: 'root'
 })
-export class UserDataService implements IdataForm {
-dados: IdataForm
+export class UserDataService implements Methods {
+dados: Methods
 constructor() {
   if (environment.production) {
     this.dados = new DatabaseMockadoService

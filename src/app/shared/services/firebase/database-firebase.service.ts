@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { IdataForm } from './../../IdataForm';
+import { Methods} from '../../models/methodsService.model';
 import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
 import { getDatabase, ref, set } from "firebase/database";
 
 @Injectable({
   providedIn: 'root'
 })
-export class DatabaseFirebaseService implements IdataForm {
+export class DatabaseFirebaseService implements Methods {
 
 constructor() {}
 

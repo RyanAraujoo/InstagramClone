@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { IdataForm } from './../IdataForm';
+import { Methods} from '../models/methodsService.model';
 import { DataBaseMock } from './dataForm.mock';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DatabaseMockadoService implements IdataForm{
+export class DatabaseMockadoService implements Methods {
 
   constructor() { }
   getUser(user: string, pass: string) {
