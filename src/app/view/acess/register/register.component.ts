@@ -3,13 +3,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserDataService } from 'src/app/shared/services/userData.service';
 
 @Component({
-  selector: 'app-cadastro',
-  templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.scss'],
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss'],
   providers: [UserDataService]
 })
 
-export class CadastroComponent {
+export class RegisterComponent {
   constructor(private userData: UserDataService) {}
 
     private formRegister =  new FormGroup({

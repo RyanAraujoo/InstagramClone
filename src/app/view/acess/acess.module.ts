@@ -4,14 +4,18 @@ import { CommonModule } from '@angular/common';
 import { AcessComponent } from './acess.component';
 import { BannerComponent } from './banner/banner.component';
 import { LoginComponent } from './login/login.component';
-import { CadastroComponent } from './cadastro/cadastro.component';
+import { RegisterComponent } from './register/register.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
-  {path: '', component: LoginComponent },
-  {path: 'register', component: CadastroComponent},
+  {path: '', component: AcessComponent, children:
+    [
+      { path: '', component: LoginComponent },
+      { path: 'register', component: RegisterComponent },
+  ]
+  }
 ]
 
 @NgModule({
@@ -19,7 +23,7 @@ const routes: Routes = [
     AcessComponent,
     BannerComponent,
     LoginComponent,
-    CadastroComponent
+    RegisterComponent
   ],
 
   imports: [
@@ -32,7 +36,7 @@ const routes: Routes = [
     AcessComponent,
     BannerComponent,
     LoginComponent,
-    CadastroComponent,
+    RegisterComponent,
     RouterModule,
     ReactiveFormsModule
   ]
