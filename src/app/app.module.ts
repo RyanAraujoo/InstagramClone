@@ -5,17 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './view/home/home.module';
 
+import { DatabaseFirebaseService } from './shared/services/firebase/database-firebase.service';
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-  BrowserModule,
+BrowserModule,
     AppRoutingModule,
     AcessModule,
     HomeModule
   ],
-  providers: [],
+  providers: [DatabaseFirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
