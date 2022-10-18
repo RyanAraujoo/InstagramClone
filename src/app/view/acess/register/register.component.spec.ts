@@ -1,18 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, inject, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { CadastroComponent } from './register.component';
+import { RegisterComponent } from './register.component';
+import { UserDataService } from './../../../shared/services/userData.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 describe('CadastroComponent', () => {
-  let component: CadastroComponent;
-  let fixture: ComponentFixture<CadastroComponent>;
+  let component: RegisterComponent;
+  let fixture: ComponentFixture<RegisterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CadastroComponent ]
+      declarations: [ RegisterComponent ],
+      imports: [UserDataService]
     })
+
+
     .compileComponents();
 
-    fixture = TestBed.createComponent(CadastroComponent);
+    fixture = TestBed.createComponent(RegisterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -20,4 +25,5 @@ describe('CadastroComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });
