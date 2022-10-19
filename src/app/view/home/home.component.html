@@ -1,19 +1,16 @@
-<nav class="navbar fixed-top navbar-light bg-white">
-  <div class="container">
-    <div class="logo"></div>
-    <div class="add-post"></div>
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="../../../assets/camera.png" class="rounded mx-auto d-block" alt="...">
+  <nav class="navbar fixed-top navbar-light bg-white">
+    <div class="container">
+      <div class="logo"></div>
+      <div class="add-post"></div>
+      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <img class="logo_img"
+          src="../../../assets/106230_add_icon.png" alt="">
       </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" (click)="FinishAuth()">Sair</a></li>
-      </ul>
+      <a style="cursor: pointer;" (click)="FinishAuth()">Sair</a>
     </div>
+  </nav>
+  <br /><br /><br />
+  <div class="container">
+    <app-publications></app-publications>
+    <app-new-publications></app-new-publications>
   </div>
-</nav>
-
-<br /><br /><br />
-<div class="container">
-  <app-publications></app-publications>
-</div>

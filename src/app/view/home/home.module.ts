@@ -5,22 +5,22 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { PublicationsComponent } from './publications/publications.component';
 import { HomeGuardService } from 'src/app/shared/guards/home-guard.service';
+import { NewPublicationsComponent } from './new-publications/new-publications.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DatabasePublicationsService } from 'src/app/shared/services/firebase/publications/databasePublications.service';
+
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent, canActivate: [HomeGuardService] }
-]
+  { path: 'home', component: HomeComponent, canActivate: [HomeGuardService] },
+];
 @NgModule({
   declarations: [
     HomeComponent,
-    PublicationsComponent
+    PublicationsComponent,
+    NewPublicationsComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule.forRoot(routes)
-  ],
-  exports: [
-    HomeComponent,
-    PublicationsComponent
-  ]
+  imports: [ReactiveFormsModule, CommonModule, RouterModule.forRoot(routes)],
+  exports: [HomeComponent],
+  providers: [DatabasePublicationsService]
 })
-export class HomeModule { }
+export class HomeModule {}
