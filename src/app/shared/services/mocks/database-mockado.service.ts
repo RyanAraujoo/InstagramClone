@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Methods} from '../models/methodsService.model';
+import { Methods} from '../../models/methodsService.model';
 import { DataBaseMock } from './dataForm.mock';
 
 @Injectable({

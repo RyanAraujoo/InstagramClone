@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from './../../../environments/environment';
-import { DatabaseMockadoService } from './../mocks/database-mockado.service';
+import { DatabaseMockadoService } from './mocks/database-mockado.service';
 import { DatabaseFirebaseService } from './firebase/database-firebase.service';
 import { Methods } from '../models/methodsService.model';
 import { Router } from '@angular/router';
