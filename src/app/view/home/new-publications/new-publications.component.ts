@@ -14,14 +14,15 @@ export class NewPublicationsComponent {
     asset: new FormControl('')
   })
   idUser!: string;
+  img!: any
   constructor(private publicService: DatabasePublicationsService) {}
 
   getFile(event: any) {
-     console.log((<HTMLInputElement>event.target).files)
+     this.img = (<HTMLInputElement>event.target).files
   }
 
   addNewPublication() {
-      this.publicService.addNewPublication(this.newPubl.value.title,this.newPubl.value.asset[0]).then(
+      this.publicService.addNewPublication(this.newPubl.value.title,this.img[0]).then(
           () => { console.log("Publicação Criada com Sucesso!")}
       ).catch(
           (erro: any) => { console.log("Erro de Criação" + erro.message)}
