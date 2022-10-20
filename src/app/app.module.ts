@@ -8,6 +8,7 @@ import { HomeModule } from './view/home/home.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { DatabaseFirebaseService } from './shared/services/firebase/database-firebase.service';
+import { ProgressBarService } from './shared/services/firebase/publications/progress/progressBar.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +19,7 @@ import { DatabaseFirebaseService } from './shared/services/firebase/database-fir
     AcessModule,
     HomeModule,
   ],
-  providers: [DatabaseFirebaseService],
+  providers: [DatabaseFirebaseService,ProgressBarService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
