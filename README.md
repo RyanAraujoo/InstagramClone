@@ -1,27 +1,43 @@
-# InstagramClone
+<h1  align="center">PássaroUrbano<img width=40 align="center" src="./src/assets/logo-instagram-2.png"></h1>
+<p align="center"><b><i>🛒 &nbsp;Versão 1 da Aplicação</i></b></p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
+<p align="center">
+ Em Desenvolvimento!
+</p>
+# 📌 Tópicos
 
-## Development server
+<!--ts-->
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Descricao](#-Descricao)
+- [Tecnologias](#-Tecnologias)
+- [Tarefas](#-Features)
+- [Aplicacao](#-Como-Posso-Rodar-a-Aplicacao?)
+<!--te-->
 
-## Code scaffolding
+# 📄 Descricao
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+> O projeto terá que fornecer uma milha de funcionalidades assim como a aplicação original já disponibilizada e utilizadas por muitos usuários na internet.
 
-## Build
+# 🚀 Tecnologias
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [SCSS](https://sass-lang.com/)
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [TypeScript](https://www.typescriptlang.org)
+- [Spring](https://spring.io/)
+- [AngularV14](https://angular.io/)
+- [Visual Studio Code](https://code.visualstudio.com/)
 
-## Running unit tests
+# 🎯 Features
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<pre>
+✔️ Login/Register com uso de formulário e validação
+✔️ Categorizar os posts/usuários
+✔️ Perfil do Instagram
+✔️ Configurações da página
+✔️ Design Responsivo
+</pre>
+# 📑 Como Posso Rodar a Aplicacao?
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+----- Indisponível -----
+-----------------------------------------------------------------------------
