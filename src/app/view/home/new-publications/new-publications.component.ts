@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { interval, Subject, takeUntil } from 'rxjs';
 import { DatabasePublicationsService } from 'src/app/shared/services/firebase/publications/databasePublications.service';
@@ -17,6 +17,8 @@ export class NewPublicationsComponent {
   idUser!: string;
   img!: any
   valueNowProgress!: number
+  @Output() timeLine: EventEmitter<any> = new EventEmitter<any>()
+
 
   constructor(private publicService: DatabasePublicationsService, private progressBarService: ProgressBarService) {}
 
@@ -26,7 +28,6 @@ export class NewPublicationsComponent {
   }
 
   addNewPublication() {
-
     let go = new Subject<boolean>();
     go.next(true);
     const takeFive = interval(1000).pipe(takeUntil(go));
@@ -38,15 +39,7 @@ export class NewPublicationsComponent {
       }
     });
 
-    this.publicService
-      .addNewPublication(this.newPubl.value.title, this.img[0])
-      .then((res) => {
-        console.log('Publicação Criada com Sucesso!');
-      })
-      .catch((erro: any) => {
-        console.log('Erro de Criação' + erro.message);
-      });
-
-
+    this.publicService.addNewPublication(this.newPubl.value.title, this.img[0])
+    this.timeLine.emit()
   }
 }

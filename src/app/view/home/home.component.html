@@ -11,6 +11,6 @@
   </nav>
   <br /><br /><br />
   <div class="container">
-    <app-publications></app-publications>
-    <app-new-publications></app-new-publications>
+    <app-publications #publications></app-publications>
+    <app-new-publications (timeLine)="updateTimeLine()"></app-new-publications>
   </div>

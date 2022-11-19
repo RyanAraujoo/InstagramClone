@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserDataService } from '../../../shared/services/userData.service'
 
@@ -9,10 +9,9 @@ import { UserDataService } from '../../../shared/services/userData.service'
   providers: [UserDataService]
 })
 export class LoginComponent {
-
   constructor(private userData: UserDataService) {}
        private formLogin =  new FormGroup({
-          user : new FormControl('',[Validators.required]),
+          user : new FormControl('',[Validators.required, Validators.pattern("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+).(\.[a-z]{2,3})$")]),
           password : new FormControl('',[Validators.required, Validators.minLength(6)]),
         })
 
@@ -22,7 +21,8 @@ export class LoginComponent {
 
         ValidatorFormOnButton(): string { return this._FormLogin.valid ? '' : 'disabled' }
 
-        getUserConsult() {
+        async getUserConsult(): Promise<boolean> {
           this.userData.getUser(this._FormLogin.value.user,this._FormLogin.value.password)
+          return window.localStorage.getItem('idToken') === undefined ? false : true
         }
 }

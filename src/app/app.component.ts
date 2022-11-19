@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { SdkService } from './shared/services/firebase/sdk.service';
+import { FirebaseSDKService } from './shared/services/firebase/firebase-sdk.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [SdkService]
+  providers: [FirebaseSDKService]
 })
 export class AppComponent {
-    constructor(private service: SdkService) {}
+  constructor(private firebaseSDK: FirebaseSDKService) { }
 }

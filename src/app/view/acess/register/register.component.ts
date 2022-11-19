@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserDataService } from 'src/app/shared/services/userData.service';
 
@@ -9,8 +9,13 @@ import { UserDataService } from 'src/app/shared/services/userData.service';
   providers: [UserDataService]
 })
 
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
+  @Output() banner: EventEmitter<boolean> = new EventEmitter();
+
   constructor(private userData: UserDataService) {}
+  ngOnInit(): void {
+    this.banner.emit(false)
+  }
 
     private formRegister =  new FormGroup({
       numberPhoneMail : new FormControl('',[Validators.required]),
@@ -28,4 +33,5 @@ export class RegisterComponent {
     }
 
     ValidatorFormOnButton(): string { return this._FormRegister.valid ? '' : 'disabled' }
+
 }

@@ -1,5 +1,10 @@
+img {
+  position: absolute;
+}
 .container {
-  &_icon {
-      width: auto;
-  }
+      background-image: url(../../../../assets/logo-acess.png);
+      height: 602px;
+      width: 379px;
+      padding-top: 91px;
+      padding-left: 116px;
 }

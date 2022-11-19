@@ -1,7 +1,8 @@
 <div class="container">
   <img
-    src="../../../assets/logo-acess.png"
+    *ngFor="let img of image"
+    [@banner] = "img.state"
+    [src]="img.url"
     alt="celular-mostrando-tela-inicial-instagram-app"
-    class="container_icon"
   />
 </div>

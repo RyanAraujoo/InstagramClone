@@ -1,8 +1,7 @@
-import { ComponentFixture, inject, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed} from '@angular/core/testing';
 
 import { RegisterComponent } from './register.component';
 import { UserDataService } from './../../../shared/services/userData.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 describe('CadastroComponent', () => {
   let component: RegisterComponent;
