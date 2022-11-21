@@ -70,8 +70,10 @@ export class DatabaseFirebaseService implements Methods {
     try {
        this.consultPostPublications()
       try {
-         this.consultUrlPublications()
-        try {
+         this.consultUrlPublications().then(() => {
+          console.log(this.array)
+         })
+         try {
            this.consultUserPublications()
           return this.array
         } catch (error) {
@@ -99,31 +101,41 @@ export class DatabaseFirebaseService implements Methods {
     });
   }
 
-  consultUrlPublications() {
-    this.array.forEach((child) => {
-       getDownloadURL(
+ async consultUrlPublications() {
+  for (let  child of this.array) {
+     await this.getURL(child)
+  }
+
+  }
+
+  getURL(child: any) {
+      getDownloadURL(
         refStorage(getStorage(), `assets/${child.key}`)
       ).then((urlDowloadKey: string) => {
           child.url = urlDowloadKey
       })
-    })
+    }
+
+    consultUserPublications() {
+      onAuthStateChanged(getAuth(), (user: any) => {
+        if (user) {
+          let startCountRef = refDatabase(
+            getDatabase(),
+            `users/${btoa(user.email)}`
+          )
+          onValue(startCountRef, (snapshot) => {
+            this.array = this.array.map((ArrayKeysUrlChild) => {
+            ArrayKeysUrlChild.username = snapshot.val().username
+            });
+          },{
+            onlyOnce: true
+          });
+        }
+      });
+    }
+
   }
 
-  consultUserPublications() {
-    onAuthStateChanged(getAuth(), (user: any) => {
-      if (user) {
-        let startCountRef = refDatabase(
-          getDatabase(),
-          `users/${btoa(user.email)}`
-        )
-        onValue(startCountRef, (snapshot) => {
-          this.array = this.array.map((ArrayKeysUrlChild) => {
-          ArrayKeysUrlChild.username = snapshot.val().username
-          });
-        },{
-          onlyOnce: true
-        });
-      }
-    });
-  }
-}
+
+
+
